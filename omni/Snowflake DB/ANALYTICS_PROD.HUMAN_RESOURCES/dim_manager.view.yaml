@@ -1,0 +1,29 @@
+# Reference this view as analytics_prod_human_resources__dim_manager
+catalog: ANALYTICS_PROD
+schema: HUMAN_RESOURCES
+table_name: DIM_MANAGER
+
+dimensions:
+  manager_id:
+    sql: '"MANAGER_ID"'
+    format: ID
+
+  manager_name:
+    sql: '"MANAGER_NAME"'
+
+  manager_gender:
+    sql: '"MANAGER_GENDER"'
+
+  department_id:
+    sql: '"DEPARTMENT_ID"'
+    format: ID
+
+  manager_level:
+    sql: '"MANAGER_LEVEL"'
+
+  manager_hire_date:
+    sql: '"MANAGER_HIRE_DATE"'
+
+measures:
+  count:
+    aggregate_type: count

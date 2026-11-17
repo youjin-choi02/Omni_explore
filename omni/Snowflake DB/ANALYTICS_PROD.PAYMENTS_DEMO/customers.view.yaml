@@ -1,0 +1,44 @@
+# Reference this view as analytics_prod_payments_demo__customers
+catalog: ANALYTICS_PROD
+schema: PAYMENTS_DEMO
+table_name: CUSTOMERS
+
+dimensions:
+  customer_id:
+    sql: '"CUSTOMER_ID"'
+    format: ID
+
+  customer_created_at:
+    sql: '"CUSTOMER_CREATED_AT"'
+
+  customer_segment:
+    sql: '"CUSTOMER_SEGMENT"'
+
+  home_country:
+    sql: '"HOME_COUNTRY"'
+
+  home_region:
+    sql: '"HOME_REGION"'
+
+  kyc_tier:
+    sql: '"KYC_TIER"'
+
+  baseline_risk_tier:
+    sql: '"BASELINE_RISK_TIER"'
+
+  normal_device_id:
+    sql: '"NORMAL_DEVICE_ID"'
+    format: ID
+
+  normal_ip_subnet:
+    sql: '"NORMAL_IP_SUBNET"'
+
+  avg_txn_amount:
+    sql: '"AVG_TXN_AMOUNT"'
+
+  is_active:
+    sql: '"IS_ACTIVE"'
+
+measures:
+  count:
+    aggregate_type: count

@@ -1,0 +1,22 @@
+# Reference this view as analytics_prod_human_resources__dim_department
+catalog: ANALYTICS_PROD
+schema: HUMAN_RESOURCES
+table_name: DIM_DEPARTMENT
+
+dimensions:
+  department_id:
+    sql: '"DEPARTMENT_ID"'
+    format: ID
+
+  department_name:
+    sql: '"DEPARTMENT_NAME"'
+
+  region:
+    sql: '"REGION"'
+
+  function_group:
+    sql: '"FUNCTION_GROUP"'
+
+measures:
+  count:
+    aggregate_type: count

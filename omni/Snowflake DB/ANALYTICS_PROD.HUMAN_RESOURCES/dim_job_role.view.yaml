@@ -1,0 +1,25 @@
+# Reference this view as analytics_prod_human_resources__dim_job_role
+catalog: ANALYTICS_PROD
+schema: HUMAN_RESOURCES
+table_name: DIM_JOB_ROLE
+
+dimensions:
+  job_role_id:
+    sql: '"JOB_ROLE_ID"'
+    format: ID
+
+  job_role_name:
+    sql: '"JOB_ROLE_NAME"'
+
+  job_level:
+    sql: '"JOB_LEVEL"'
+
+  exempt_status:
+    sql: '"EXEMPT_STATUS"'
+
+  job_family:
+    sql: '"JOB_FAMILY"'
+
+measures:
+  count:
+    aggregate_type: count

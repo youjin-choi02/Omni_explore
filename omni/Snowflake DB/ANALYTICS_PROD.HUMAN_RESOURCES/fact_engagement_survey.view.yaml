@@ -1,0 +1,35 @@
+# Reference this view as analytics_prod_human_resources__fact_engagement_survey
+catalog: ANALYTICS_PROD
+schema: HUMAN_RESOURCES
+table_name: FACT_ENGAGEMENT_SURVEY
+
+dimensions:
+  employee_id:
+    sql: '"EMPLOYEE_ID"'
+    format: ID
+
+  survey_date_key:
+    sql: '"SURVEY_DATE_KEY"'
+
+  engagement_score:
+    sql: '"ENGAGEMENT_SCORE"'
+
+  work_life_balance_score:
+    sql: '"WORK_LIFE_BALANCE_SCORE"'
+
+  manager_support_score:
+    sql: '"MANAGER_SUPPORT_SCORE"'
+
+  career_growth_score:
+    sql: '"CAREER_GROWTH_SCORE"'
+
+  enps_group:
+    sql: '"ENPS_GROUP"'
+
+  survey_id:
+    sql: '"SURVEY_ID"'
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count

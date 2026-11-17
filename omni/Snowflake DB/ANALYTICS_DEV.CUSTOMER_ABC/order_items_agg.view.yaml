@@ -1,0 +1,23 @@
+# Reference this view as analytics_dev_customer_abc__order_items_agg
+catalog: ANALYTICS_DEV
+schema: CUSTOMER_ABC
+table_name: ORDER_ITEMS_AGG
+
+dimensions:
+  order_id:
+    sql: '"ORDER_ID"'
+    format: ID
+
+  user_id:
+    sql: '"USER_ID"'
+    format: ID
+
+  total_sale_price:
+    sql: '"TOTAL_SALE_PRICE"'
+
+  count:
+    sql: '"COUNT"'
+
+measures:
+  count:
+    aggregate_type: count

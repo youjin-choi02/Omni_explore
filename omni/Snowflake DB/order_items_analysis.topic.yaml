@@ -1,0 +1,63 @@
+base_view: analytics_dev_customer_abc__order_items
+label: Order Items Analysis
+description: Order-item sales, fulfillment, returns, and related inventory,
+  products, customers, and distribution centers.
+
+joins:
+  analytics_dev_customer_abc__inventory_items:
+    analytics_dev_customer_abc__products: {}
+    analytics_dev_customer_abc__distribution_centers: {}
+  analytics_dev_customer_abc__users: {}
+
+views:
+  analytics_dev_customer_abc__order_items:
+    measures:
+      total_sale_price:
+        sql: ${analytics_dev_customer_abc__order_items.sale_price}
+        format: number_2
+        description: Sum of item sale prices. Includes all statuses unless filtered; not
+          net realized revenue.
+        aggregate_type: sum
+
+      distinct_order_count:
+        sql: ${analytics_dev_customer_abc__order_items.order_id}
+        description: Number of distinct orders represented by the selected order items.
+        aggregate_type: count_distinct
+
+relationships:
+  - join_from_view: analytics_dev_customer_abc__order_items
+    join_to_view: analytics_dev_customer_abc__inventory_items
+    join_type: always_left
+    on_sql: ${analytics_dev_customer_abc__order_items.inventory_item_id} =
+      ${analytics_dev_customer_abc__inventory_items.id}
+    relationship_type: many_to_one
+
+  - join_from_view: analytics_dev_customer_abc__order_items
+    join_to_view: analytics_dev_customer_abc__users
+    join_type: always_left
+    on_sql: ${analytics_dev_customer_abc__order_items.user_id} =
+      ${analytics_dev_customer_abc__users.id}
+    relationship_type: many_to_one
+
+  - join_from_view: analytics_dev_customer_abc__inventory_items
+    join_to_view: analytics_dev_customer_abc__products
+    join_type: always_left
+    on_sql: ${analytics_dev_customer_abc__inventory_items.product_id} =
+      ${analytics_dev_customer_abc__products.id}
+    relationship_type: many_to_one
+
+  - join_from_view: analytics_dev_customer_abc__inventory_items
+    join_to_view: analytics_dev_customer_abc__distribution_centers
+    join_type: always_left
+    on_sql: ${analytics_dev_customer_abc__inventory_items.product_distribution_center_id}
+      = ${analytics_dev_customer_abc__distribution_centers.id}
+    relationship_type: many_to_one
+
+ai_context: The grain is one order item. Inventory and customer analysis is
+  limited to records related to order items; this topic does not represent all
+  unsold stock or all registered users. Total sale price sums sale_price across
+  every status unless the query applies a status filter; it is not net realized
+  revenue. Distinct order count counts order_id, not individual items. Use order
+  item created_at for order trends, and inventory sold_at for inventory sale
+  timing. Do not assume the units or definition of the source margin or
+  time_to_ship fields without confirmation.

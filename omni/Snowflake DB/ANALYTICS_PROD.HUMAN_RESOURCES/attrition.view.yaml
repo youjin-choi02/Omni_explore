@@ -1,0 +1,55 @@
+# Reference this view as analytics_prod_human_resources__attrition
+catalog: ANALYTICS_PROD
+schema: HUMAN_RESOURCES
+table_name: ATTRITION
+
+dimensions:
+  employee_id:
+    sql: '"EMPLOYEE_ID"'
+    format: ID
+
+  gender:
+    sql: '"GENDER"'
+
+  age:
+    sql: '"AGE"'
+
+  age_band:
+    sql: '"AGE_BAND"'
+
+  department:
+    sql: '"DEPARTMENT"'
+
+  job_role:
+    sql: '"JOB_ROLE"'
+
+  education_field:
+    sql: '"EDUCATION_FIELD"'
+
+  work_life_balance:
+    sql: '"WORK_LIFE_BALANCE"'
+
+  distance_from_home_km:
+    sql: '"DISTANCE_FROM_HOME_KM"'
+
+  business_travel:
+    sql: '"BUSINESS_TRAVEL"'
+
+  years_with_curr_manager:
+    sql: '"YEARS_WITH_CURR_MANAGER"'
+
+  monthly_income:
+    sql: '"MONTHLY_INCOME"'
+
+  hire_date:
+    sql: '"HIRE_DATE"'
+
+  attrition_flag:
+    sql: '"ATTRITION_FLAG"'
+
+  attrition_date:
+    sql: '"ATTRITION_DATE"'
+
+measures:
+  count:
+    aggregate_type: count

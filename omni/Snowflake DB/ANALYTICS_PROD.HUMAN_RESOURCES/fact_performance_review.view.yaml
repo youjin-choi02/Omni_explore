@@ -1,0 +1,33 @@
+# Reference this view as analytics_prod_human_resources__fact_performance_review
+catalog: ANALYTICS_PROD
+schema: HUMAN_RESOURCES
+table_name: FACT_PERFORMANCE_REVIEW
+
+dimensions:
+  employee_id:
+    sql: '"EMPLOYEE_ID"'
+    format: ID
+
+  review_date_key:
+    sql: '"REVIEW_DATE_KEY"'
+
+  performance_rating:
+    sql: '"PERFORMANCE_RATING"'
+
+  potential_rating:
+    sql: '"POTENTIAL_RATING"'
+
+  promotion_recommended_flag:
+    sql: '"PROMOTION_RECOMMENDED_FLAG"'
+
+  manager_id:
+    sql: '"MANAGER_ID"'
+    format: ID
+
+  review_id:
+    sql: '"REVIEW_ID"'
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count

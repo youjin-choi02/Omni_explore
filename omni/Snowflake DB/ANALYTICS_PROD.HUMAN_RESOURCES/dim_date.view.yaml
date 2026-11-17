@@ -1,0 +1,36 @@
+# Reference this view as analytics_prod_human_resources__dim_date
+catalog: ANALYTICS_PROD
+schema: HUMAN_RESOURCES
+table_name: DIM_DATE
+
+dimensions:
+  date_key:
+    sql: '"DATE_KEY"'
+
+  date:
+    sql: '"DATE"'
+
+  year:
+    sql: '"YEAR"'
+
+  quarter:
+    sql: '"QUARTER"'
+
+  month:
+    sql: '"MONTH"'
+
+  month_name:
+    sql: '"MONTH_NAME"'
+
+  day:
+    sql: '"DAY"'
+
+  day_of_week:
+    sql: '"DAY_OF_WEEK"'
+
+  is_month_end:
+    sql: '"IS_MONTH_END"'
+
+measures:
+  count:
+    aggregate_type: count

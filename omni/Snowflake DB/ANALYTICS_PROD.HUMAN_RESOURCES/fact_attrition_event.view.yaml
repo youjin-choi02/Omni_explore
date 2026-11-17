@@ -1,0 +1,32 @@
+# Reference this view as analytics_prod_human_resources__fact_attrition_event
+catalog: ANALYTICS_PROD
+schema: HUMAN_RESOURCES
+table_name: FACT_ATTRITION_EVENT
+
+dimensions:
+  attrition_id:
+    sql: '"ATTRITION_ID"'
+    format: ID
+
+  employee_id:
+    sql: '"EMPLOYEE_ID"'
+    format: ID
+
+  attrition_date_key:
+    sql: '"ATTRITION_DATE_KEY"'
+
+  attrition_type:
+    sql: '"ATTRITION_TYPE"'
+
+  attrition_reason:
+    sql: '"ATTRITION_REASON"'
+
+  within_1_year_flag:
+    sql: '"WITHIN_1_YEAR_FLAG"'
+
+  rehire_eligible_flag:
+    sql: '"REHIRE_ELIGIBLE_FLAG"'
+
+measures:
+  count:
+    aggregate_type: count

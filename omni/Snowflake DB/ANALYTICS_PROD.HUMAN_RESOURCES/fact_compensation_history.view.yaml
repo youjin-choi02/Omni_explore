@@ -1,0 +1,29 @@
+# Reference this view as analytics_prod_human_resources__fact_compensation_history
+catalog: ANALYTICS_PROD
+schema: HUMAN_RESOURCES
+table_name: FACT_COMPENSATION_HISTORY
+
+dimensions:
+  employee_id:
+    sql: '"EMPLOYEE_ID"'
+    format: ID
+
+  effective_date_key:
+    sql: '"EFFECTIVE_DATE_KEY"'
+
+  monthly_salary:
+    sql: '"MONTHLY_SALARY"'
+
+  change_type:
+    sql: '"CHANGE_TYPE"'
+
+  comp_event_id:
+    sql: '"COMP_EVENT_ID"'
+    format: ID
+
+  event_seq:
+    sql: '"EVENT_SEQ"'
+
+measures:
+  count:
+    aggregate_type: count
