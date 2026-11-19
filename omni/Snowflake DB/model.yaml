@@ -11,3 +11,9 @@ ignored_schemas:
     ANALYTICS_PROD.OMNI_UPLOADS,
     ANALYTICS_PROD.CONTENT_GOVERNANCE
   ]
+
+access_grants:
+  charts_access:
+    user_attribute: omni_user_groups
+    allowed_values: [ test ]
+    access_boostable: true

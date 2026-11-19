@@ -3,6 +3,8 @@ label: Order Items Analysis
 description: Order-item sales, fulfillment, returns, and related inventory,
   products, customers, and distribution centers.
 
+required_access_grants: [ charts_access ]
+
 joins:
   analytics_dev_customer_abc__inventory_items:
     analytics_dev_customer_abc__products: {}
