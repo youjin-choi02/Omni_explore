@@ -1,0 +1,14 @@
+base_view: analytics_dev_customer_abc__inventory_items
+label: Inventory Items — Cross-Topic Test
+description: All inventory items, including unsold stock, with product
+  categories for testing calculations alongside Order Items Analysis.
+
+required_access_grants: [ charts_access ]
+
+joins:
+  analytics_dev_customer_abc__products: {}
+
+ai_context: One row per inventory item, including sold and unsold items. Use
+  Products Category as a shared dimension with Order Items Analysis. Order item
+  count divided by inventory item count is a test ratio, not sell-through; order
+  items include every status unless filtered.
